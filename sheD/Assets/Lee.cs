@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,23 +7,33 @@ using UnityEngine.Serialization;
 public class Lee : MonoBehaviour
 {
     [SerializeField] private GameObject lee;
-
-    [SerializeField] private float timeToSpawn = 5f;
     
     private float _currentTime = 0;
-    // Start is called before the first frame update
+    
+    private CircleCollider2D _collider;
+
+    private void Awake()
+    {
+        _collider = GetComponent<CircleCollider2D>();
+    }
+
     void Start()
     {
         lee.SetActive(false);
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         _currentTime += Time.deltaTime;
-        if (_currentTime >= timeToSpawn)
+        if (_currentTime >= LevelManager.Instance.EnemySpawnDelay)
         {
             lee.SetActive(true);
         }
+    }
+
+    private void SetDetectionRadius(float value)
+    {
+        _collider.radius = value;
     }
 }

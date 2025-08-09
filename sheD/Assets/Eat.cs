@@ -14,12 +14,14 @@ public class Eat : MonoBehaviour
     private Player _player;
     private float _currentTime = 0;
     private GameObject _camouflageObject;
+    private float _foodConsumptionRate;
     
 
 
     private void Awake()
     {
         _player = GetComponentInParent<Player>();
+        _foodConsumptionRate = LevelManager.Instance.FoodConsumptionRate;
     }
 
     private void Update()
@@ -34,7 +36,7 @@ public class Eat : MonoBehaviour
         if (_player.IsCamuflaged)
         {
             _currentTime += Time.deltaTime;
-            if (_currentTime >= 1)
+            if (_currentTime >= _foodConsumptionRate)
             {
                 RemoveFood();
                 _currentTime = 0;
@@ -60,7 +62,7 @@ public class Eat : MonoBehaviour
         {
             print("comida");
             other.gameObject.SetActive(false);
-            AddFood();
+            AddFood(LevelManager.Instance.FoodValue);
         }
 
         if (other.gameObject.CompareTag("Camuflaje"))
@@ -69,7 +71,7 @@ public class Eat : MonoBehaviour
             print("camuflaje On");
             _camouflageObject = other.gameObject;
             _player.IsCamuflaged = true;
-            AddFood();
+            AddFood(LevelManager.Instance.CamouflageFoodValue);
             
 
         }
@@ -90,9 +92,9 @@ public class Eat : MonoBehaviour
     }
 
 
-    private void AddFood()
+    private void AddFood(int value)
     {
-        _totalFood++;
+        _totalFood+=  value;;
         
     }
 
