@@ -22,29 +22,23 @@ public class LeeMover : MonoBehaviour
 
    private void Update()
    {
-      if (lee.activeSelf)
+      if (!lee.activeSelf) return;
+      if (_currentPath == null)
       {
-         if (_currentPath == null)
-         {
-            GetRandomPath();
+         GetRandomPath();
                      
-         }
+      }
 
-         if (_currentPath != null)
-         {
-            LeeMove();
-            SetLeeViewDirection();
+      if (_currentPath == null) return;
+      LeeMove();
+      SetLeeViewDirection();
 
-            if (lee.transform.position == _currentPath[_indexPath].position)
-            {
-               _indexPath++;
-               print(_indexPath);
-               if (_indexPath == _currentPath.Length-1)
-               {
-                  EndPath();
-               }
-            }
-         }
+      if (lee.transform.position != _currentPath[_indexPath].position) return;
+      _indexPath++;
+               
+      if (_indexPath == _currentPath.Length-1)
+      {
+         EndPath();
       }
    }
 
