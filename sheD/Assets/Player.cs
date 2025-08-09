@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   private InputManager input;
+   private InputManager _input;
    [SerializeField] private float moveSpeed = 5f;
+   private SpriteRenderer _spriteRenderer;
+   [SerializeField] GameObject foodArea;
   
 
    private void Awake()
    {
-      input = FindFirstObjectByType<InputManager>();
+      _input = FindFirstObjectByType<InputManager>();
+      _spriteRenderer = GetComponent<SpriteRenderer>();
    }
 
    private void FixedUpdate()
@@ -21,7 +24,16 @@ public class Player : MonoBehaviour
 
    private void MovePlayer()
    {
-      Vector3 movement = new Vector3(input.MovementValue.x, input.MovementValue.y, 0) * moveSpeed;
+      Vector3 movement = new Vector3(_input.MovementValue.x, _input.MovementValue.y, 0) * moveSpeed;
       transform.Translate(movement * Time.fixedDeltaTime, Space.World);
+      
+      if (_input.MovementValue.x != 0)
+      {
+         _spriteRenderer.flipX = _input.MovementValue.x < 0;
+         var scale = foodArea.transform.localScale;
+         scale.x = _input.MovementValue.x < 0 ? -1 : 1;
+         foodArea.transform.localScale = scale;
+         
+      }
    }
 }
