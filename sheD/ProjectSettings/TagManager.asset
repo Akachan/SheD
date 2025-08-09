@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - Camuflaje
+  - Enemy
   layers:
   - Default
   - TransparentFX
