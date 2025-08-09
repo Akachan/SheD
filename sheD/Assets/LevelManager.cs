@@ -59,5 +59,6 @@ public class LevelManager : MonoBehaviour
     private void OnValidate()
     {
         enemyDetectionCollider.radius = enemyDetectionRadius * 1/enemyTransform.localScale.x;
+        
     }
 }
