@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 185037277457037911}
   - component: {fileID: 2943064808222033805}
   - component: {fileID: 1480721396144201223}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "Vig\xEDa"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
