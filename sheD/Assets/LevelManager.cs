@@ -7,6 +7,9 @@ using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
+    
+    [SerializeField] private int foodValueToWin = 20;
+    
     [Header("Player Settings")]
     [SerializeField] private float playerSpeed = 5f;
 
@@ -23,7 +26,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float foodConsumptionRate = 1f;
     
     
+    private int _currentFoodCount;
     
+    public int FoodValueToWin => foodValueToWin;
     public float PlayerSpeed => playerSpeed;
     public float EnemySpeed => enemySpeed;
     public float EnemySpawnDelay => enemySpawnDelay;
@@ -31,6 +36,13 @@ public class LevelManager : MonoBehaviour
     public int FoodValue => Random.Range(minFoodValue, maxFoodValue);
     public int CamouflageFoodValue => camouflageFoodValue;
     public float FoodConsumptionRate => 1/foodConsumptionRate;
+
+   
+    public int CurrentFoodCount 
+    {
+        get => _currentFoodCount; 
+        set => _currentFoodCount = value; 
+    }
 
    
     [Header("No tocar")]

@@ -17,6 +17,8 @@ public class Eat : MonoBehaviour
     private float _foodConsumptionRate;
     private InputManager _input;
     
+    
+    
 
 
     private void Awake()
@@ -33,9 +35,15 @@ public class Eat : MonoBehaviour
 
     private void Update()
     {
+        UpdateFood();
         UpdateText();
         Camouflage();
         
+    }
+
+    private void UpdateFood()
+    {
+        LevelManager.Instance.CurrentFoodCount = _totalFood;
     }
 
     private void Camouflage()
@@ -125,4 +133,6 @@ public class Eat : MonoBehaviour
     {
         foodValueText.text = _totalFood.ToString();
     }
+    
+    
 }

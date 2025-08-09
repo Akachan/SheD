@@ -38,7 +38,7 @@ public class LeeMover : MonoBehaviour
             if (lee.transform.position == _currentPath[_indexPath].position)
             {
                _indexPath++;
-               print(_indexPath);
+               
                if (_indexPath == _currentPath.Length-1)
                {
                   EndPath();
