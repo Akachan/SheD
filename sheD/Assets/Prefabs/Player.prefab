@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8033237260198126589}
   - component: {fileID: 8839760303763986786}
   - component: {fileID: 8389288528093539660}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Area de Muerte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4005782650184065285}
   - component: {fileID: 8480830707691824000}
   - component: {fileID: 7501078022310942327}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -293,7 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd576485529cefe47b57e44fd95d0162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   foodArea: {fileID: 8226498529027254069}
 --- !u!70 &8480830707691824000
 CapsuleCollider2D:
@@ -310,7 +309,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -356,7 +355,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &8226498529027254069
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +367,7 @@ GameObject:
   - component: {fileID: 2791375923804957139}
   - component: {fileID: 2726113063124146723}
   - component: {fileID: 7512024526586501163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Area de Comida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +404,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
