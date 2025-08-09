@@ -9,16 +9,25 @@ public class Player : MonoBehaviour
    [SerializeField] private float moveSpeed = 5f;
    private SpriteRenderer _spriteRenderer;
    [SerializeField] GameObject foodArea;
-  
+   private Eat _eat;
+   private bool _isCamouflaged = false;
+   public bool IsCamuflaged
+   {
+      get => _isCamouflaged;
+      set => _isCamouflaged = value;
+   }
+
 
    private void Awake()
    {
       _input = FindFirstObjectByType<InputManager>();
       _spriteRenderer = GetComponent<SpriteRenderer>();
+      _eat = FindFirstObjectByType<Eat>();
    }
 
    private void FixedUpdate()
    {
+      Camuflaje();
       MovePlayer();
    }
 
@@ -34,6 +43,22 @@ public class Player : MonoBehaviour
          scale.x = _input.MovementValue.x < 0 ? -1 : 1;
          foodArea.transform.localScale = scale;
          
+      }
+   }
+
+   private void Camuflaje()
+   {
+      if (IsCamuflaged)
+      {
+         var color = _spriteRenderer.color;
+         color.a = 0.5f;
+         _spriteRenderer.color = color;
+      }
+      else
+      {
+         var color = _spriteRenderer.color;
+         color.a = 1f;
+         _spriteRenderer.color = color;
       }
    }
 }
