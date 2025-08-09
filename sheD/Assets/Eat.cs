@@ -21,6 +21,11 @@ public class Eat : MonoBehaviour
     private void Awake()
     {
         _player = GetComponentInParent<Player>();
+        
+    }
+
+    private void Start()
+    {
         _foodConsumptionRate = LevelManager.Instance.FoodConsumptionRate;
     }
 
