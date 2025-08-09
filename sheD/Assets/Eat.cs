@@ -15,12 +15,14 @@ public class Eat : MonoBehaviour
     private float _currentTime = 0;
     private GameObject _camouflageObject;
     private float _foodConsumptionRate;
+    private InputManager _input;
     
 
 
     private void Awake()
     {
         _player = GetComponentInParent<Player>();
+        _input = FindFirstObjectByType<InputManager>();
         
     }
 
@@ -51,10 +53,12 @@ public class Eat : MonoBehaviour
 
     private void RemoveFood()
     {
-        _totalFood--;
+        _totalFood = Mathf.Max(0, _totalFood - 1);
+        
 
-        if (_totalFood == 0)
+        if (_totalFood <= 0)
         {
+            _input.OnEatEvent -= PrepareCamouflage;
             _player.IsCamuflaged = false;
             _camouflageObject.SetActive(false);
             _camouflageObject = null;
@@ -72,14 +76,18 @@ public class Eat : MonoBehaviour
 
         if (other.gameObject.CompareTag("Camuflaje"))
         {
-
-            print("camuflaje On");
             _camouflageObject = other.gameObject;
-            _player.IsCamuflaged = true;
-            AddFood(LevelManager.Instance.CamouflageFoodValue);
-            
+            _input.OnEatEvent += PrepareCamouflage;
 
+            //AddFood(LevelManager.Instance.CamouflageFoodValue);
         }
+    }
+
+    private void PrepareCamouflage()
+    {
+        
+            print("camuflaje On");
+            _player.IsCamuflaged = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -87,13 +95,23 @@ public class Eat : MonoBehaviour
         
         if (other.gameObject.CompareTag("Camuflaje"))
         {
-            print("camuflaje Off");
-            _player.IsCamuflaged = false;
-            other.gameObject.SetActive(false);
-            _camouflageObject = null;
+            _input.OnEatEvent -= PrepareCamouflage;
+            if (_player.IsCamuflaged)
+            {
+                RemoveCamouflage(other);
+            }
+            
         }
         
         
+    }
+
+    private void RemoveCamouflage(Collider2D other)
+    {
+        print("camuflaje Off");
+        _player.IsCamuflaged = false;
+        other.gameObject.SetActive(false);
+        _camouflageObject = null;
     }
 
 
