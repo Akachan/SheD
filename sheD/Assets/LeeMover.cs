@@ -8,7 +8,7 @@ public class LeeMover : MonoBehaviour
 {
    [SerializeField] private GameObject lee;
    [SerializeField] private GameObject[] path;
-   [SerializeField] private float speed = 1f;
+
    private int _indexPath = 1;
    private Transform[] _currentPath = null;
    private SpriteRenderer _leeSprite;
@@ -16,6 +16,7 @@ public class LeeMover : MonoBehaviour
    private void Awake()
    {
       _leeSprite = GetComponentInChildren<SpriteRenderer>();
+      
 
    }
 
@@ -56,7 +57,7 @@ public class LeeMover : MonoBehaviour
    private void LeeMove()
    {
       lee.transform.position = Vector3.MoveTowards(lee.transform.position, _currentPath[_indexPath].position,
-         speed * Time.deltaTime);
+         LevelManager.Instance.EnemySpeed * Time.deltaTime);
    }
 
    private void SetLeeViewDirection()
