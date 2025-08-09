@@ -10,7 +10,13 @@ public class Player : MonoBehaviour
    private SpriteRenderer _spriteRenderer;
    [SerializeField] GameObject foodArea;
    private Eat _eat;
-  
+   private bool _isCamouflaged = false;
+   public bool IsCamuflaged
+   {
+      get => _isCamouflaged;
+      set => _isCamouflaged = value;
+   }
+
 
    private void Awake()
    {
@@ -42,7 +48,7 @@ public class Player : MonoBehaviour
 
    private void Camuflaje()
    {
-      if (_eat.IsCamuflaged)
+      if (IsCamuflaged)
       {
          var color = _spriteRenderer.color;
          color.a = 0.5f;

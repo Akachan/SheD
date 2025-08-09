@@ -11,11 +11,16 @@ public class Eat : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI foodValueText;
     private int _totalFood = 0;
-    private bool _isCamouflaged = false;
+    private Player _player;
     private float _currentTime = 0;
-    private GameObject _camouflajeObject;
-    public bool IsCamuflaged => _isCamouflaged;
+    private GameObject _camouflageObject;
+    
 
+
+    private void Awake()
+    {
+        _player = GetComponentInParent<Player>();
+    }
 
     private void Update()
     {
@@ -26,7 +31,7 @@ public class Eat : MonoBehaviour
 
     private void Camouflage()
     {
-        if (_isCamouflaged)
+        if (_player.IsCamuflaged)
         {
             _currentTime += Time.deltaTime;
             if (_currentTime >= 1)
@@ -43,9 +48,9 @@ public class Eat : MonoBehaviour
 
         if (_totalFood == 0)
         {
-            _isCamouflaged = false;
-            _camouflajeObject.SetActive(false);
-            _camouflajeObject = null;
+            _player.IsCamuflaged = false;
+            _camouflageObject.SetActive(false);
+            _camouflageObject = null;
         }
     }
 
@@ -62,8 +67,8 @@ public class Eat : MonoBehaviour
         {
 
             print("camuflaje On");
-            _camouflajeObject = other.gameObject;
-            _isCamouflaged = true;
+            _camouflageObject = other.gameObject;
+            _player.IsCamuflaged = true;
             AddFood();
             
 
@@ -76,9 +81,9 @@ public class Eat : MonoBehaviour
         if (other.gameObject.CompareTag("Camuflaje"))
         {
             print("camuflaje Off");
-            _isCamouflaged = false;
+            _player.IsCamuflaged = false;
             other.gameObject.SetActive(false);
-            _camouflajeObject = null;
+            _camouflageObject = null;
         }
         
         
