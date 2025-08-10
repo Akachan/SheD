@@ -10,59 +10,59 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1622239431811292095, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.43
+      value: 8.39
       objectReference: {fileID: 0}
     - target: {fileID: 1622239431811292095, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.97
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 2411170015534762346, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.109999
+      value: 17.45
       objectReference: {fileID: 0}
     - target: {fileID: 2411170015534762346, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.92
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 2659875258395258910, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.02
+      value: 16.4
       objectReference: {fileID: 0}
     - target: {fileID: 2659875258395258910, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95000005
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 5132792214404656053, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.02
+      value: 6.74
       objectReference: {fileID: 0}
     - target: {fileID: 5132792214404656053, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: -4.75
       objectReference: {fileID: 0}
     - target: {fileID: 6738221892736333151, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.64
+      value: 20.94
       objectReference: {fileID: 0}
     - target: {fileID: 6738221892736333151, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77000004
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 7380403922529378450, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_Name
-      value: Recorrido2 Variant
+      value: recorrido lee median
       objectReference: {fileID: 0}
     - target: {fileID: 7837450325077656193, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.23
+      value: 21.91
       objectReference: {fileID: 0}
     - target: {fileID: 7837450325077656193, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.96
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 8782289465775888166, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.78
+      value: 13.86
       objectReference: {fileID: 0}
     - target: {fileID: 8782289465775888166, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -102,19 +102,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8852137619234607876, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.34
+      value: 11.85
       objectReference: {fileID: 0}
     - target: {fileID: 8852137619234607876, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.12
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 8881303468958401005, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.41
+      value: 11.49
       objectReference: {fileID: 0}
     - target: {fileID: 8881303468958401005, guid: 3f45ac54d5fa44045b3f00d4c78db9c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.09
+      value: -5.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
