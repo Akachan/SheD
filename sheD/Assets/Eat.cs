@@ -75,28 +75,55 @@ public class Eat : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Food"))
-        {
-            print("comida");
-            other.gameObject.SetActive(false);
-            AddFood(LevelManager.Instance.FoodValue);
-        }
+        EatCommonFood(other);
+        EatCamouflageFood(other);
+    }
 
+    private void EatCamouflageFood(Collider2D other)
+    {
         if (other.gameObject.CompareTag("Camuflaje"))
         {
             _camouflageObject = other.gameObject;
             _input.OnEatEvent += PrepareCamouflage;
 
-            //AddFood(LevelManager.Instance.CamouflageFoodValue);
+            
         }
     }
+
+    private void EatCommonFood(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Food"))
+        {
+            print("comida");
+            other.gameObject.SetActive(false);
+            AddFood(LevelManager.Instance.FoodValue);
+            PlayCommonEatSfx();
+            FindFirstObjectByType<AnimationController>().SetOnEat();
+
+        }
+    }
+
+
 
     private void PrepareCamouflage()
     {
         
             print("camuflaje On");
             _player.IsCamuflaged = true;
+            StartCoroutine(CamouflageObjectHider());
+            PlayCamouflageEatSfx();
+            FindFirstObjectByType<AnimationController>().SetOnEat();
+            FindFirstObjectByType<AnimationController>().SetHidingBlend((float)_camouflageObject.GetComponent<FoodType>().GetFoodType());
     }
+
+    IEnumerator CamouflageObjectHider()
+    {
+        yield return new WaitForSeconds(0.7f);
+        var color = _camouflageObject.GetComponent<SpriteRenderer>().color;
+        color.a = 0f;
+        _camouflageObject.GetComponent<SpriteRenderer>().color = color;
+    }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -133,6 +160,31 @@ public class Eat : MonoBehaviour
     {
         foodValueText.text = _totalFood.ToString();
     }
+    
+    
+    private void PlayCommonEatSfx()
+    {
+        //Ejecutar evento  sonido de Comer cositas comunes
+        //Tambien podríamos poner el evento directamente en la animación así coincide con la boquita jajajaj
+        
+    }
+    
+    private void PlayCamouflageEatSfx()
+    {
+        /*
+        ¿Ejecutar evento sonido de Comer muebles para camuflarse?
+        
+        Si lo que se necesita es fijar los parametros las variable de referencia son:
+        IsCamuflaged -> Te dice si está camuflado (está en la clase Player)
+        LevelManager.Instance.CurrentFoodCount  -> Dice cuanta comida tiene, es un número mayor a 0
+        Lo que habría que pensar es es cuando como transformar ese valor a un número de 0 a 1. Este es 
+        estático así que lo podes llamar de cualquier lado. 
+        
+        */
+        
+    }
+    
+    
     
     
 }
