@@ -56,8 +56,11 @@ public class Capture : MonoBehaviour
         
         
         //TimeScale =0 -> no sirve hay que parar a los lee (pa mas tarde)
-        
-        
+        var lees = FindObjectsOfType<LeeMover>();
+        foreach (var lee in lees)
+        {
+            lee.StopLee();
+        }
         
         //Serpentina estrangulada
         
