@@ -67,12 +67,8 @@ public class Capture : MonoBehaviour
         //Go to main menu
         
         
-        StartCoroutine((EndGame()));
+        StartCoroutine((LevelManager.Instance.EndGame()));
     }
 
-    IEnumerator EndGame()
-    {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+
 }
