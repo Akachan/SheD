@@ -67,7 +67,7 @@ public class Capture : MonoBehaviour
         //Go to main menu
         
         
-        StartCoroutine((LevelManager.Instance.EndGame()));
+        StartCoroutine((LevelManager.Instance.EndGame(EndGameType.Lose)));
     }
 
 

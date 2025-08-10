@@ -5,6 +5,7 @@ using UnityEngine;
 public class UiManager : MonoBehaviour
 {
    [SerializeField] private GameObject gameOverPanel;
+   [SerializeField] private GameObject winPanel;
    
    public static UiManager Instance { get; private set; }
 
@@ -20,6 +21,10 @@ public class UiManager : MonoBehaviour
    public void EnableGameOverPanel()
    {
       gameOverPanel.SetActive(true);
+   }
+   public void EnableWinPanel()
+   {
+      winPanel.SetActive(true);
    }
 
 

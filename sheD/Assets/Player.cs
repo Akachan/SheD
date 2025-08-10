@@ -44,17 +44,6 @@ public class Player : MonoBehaviour
       MovePlayer();
    }
    
-   private void Camuflaje()
-   {
-      if (IsCamuflaged)
-      {
-         SetCamouflage();
-      }
-      else
-      {
-         RemoveCamouflage();
-      }
-   }
 
    private void MovePlayer()
    {
@@ -100,7 +89,7 @@ public class Player : MonoBehaviour
    }
    
    
-   //Outdated
+   //Outdated ******************************************
    private void RemoveCamouflage()
    {
       var color = _spriteRenderer.color;
@@ -113,5 +102,17 @@ public class Player : MonoBehaviour
       var color = _spriteRenderer.color;
       color.a = 0.5f;
       _spriteRenderer.color = color;
+   }
+   
+   private void Camuflaje()
+   {
+      if (IsCamuflaged)
+      {
+         SetCamouflage();
+      }
+      else
+      {
+         RemoveCamouflage();
+      }
    }
 }

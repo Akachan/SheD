@@ -76,14 +76,29 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    public IEnumerator EndGame()
+    public IEnumerator EndGame(EndGameType endType)
     {
         yield return new WaitForSeconds(2);
-        UiManager.Instance.EnableGameOverPanel();
+        switch (endType)
+        {
+            case EndGameType.Win:
+                UiManager.Instance.EnableWinPanel();
+                break;
+            case EndGameType.Lose:
+                UiManager.Instance.EnableGameOverPanel();
+                break;
+        }
     }
 
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+}
+
+public enum EndGameType
+{
+    Lose,
+    Win,
+    None
 }

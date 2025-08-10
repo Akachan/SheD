@@ -9,12 +9,8 @@ public class Exit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         print("colisionó");
-        StartCoroutine(LoadNextScene());
+        StartCoroutine(LevelManager.Instance.EndGame(EndGameType.Win));
     }
 
-    IEnumerator LoadNextScene()
-    {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);;
-    }
+
 }
