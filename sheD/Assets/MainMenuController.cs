@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 { 
     [SerializeField] private GameObject howToPlayPanel;
+    [SerializeField] private GameObject creditsPanel;
 
 
 
@@ -19,6 +20,14 @@ public class MainMenuController : MonoBehaviour
         howToPlayPanel.SetActive(true);
     }
 
+    public void OnCreditsButtonClick()
+    {
+        creditsPanel.SetActive(true);   
+    }
+    public void OnCreditsCloseButtonClick()
+    {
+        creditsPanel.SetActive(false);
+    }
     public void OnHowToPlayCloseButtonClick()
     {
         howToPlayPanel.SetActive(false);
