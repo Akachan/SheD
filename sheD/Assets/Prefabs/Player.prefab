@@ -486,6 +486,13 @@ MonoBehaviour:
       Data4: 963458282
     Path: event:/SFX/Characters/Snake/Hide
   player: {fileID: 8082478205674140372}
+  hide:
+    Guid:
+      Data1: -364215845
+      Data2: 1316942587
+      Data3: 384348349
+      Data4: 963458282
+    Path: event:/SFX/Characters/Snake/Hide
 --- !u!1 &8226498529027254069
 GameObject:
   m_ObjectHideFlags: 0
