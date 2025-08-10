@@ -13,9 +13,9 @@ public class SnakeSound : MonoBehaviour
     [SerializeField] private EventReference hide;
     [SerializeField] private EventReference moveSfx;
 
-    [SerializeField] private GameObject player;
+   
 
-    //Declaraciónes
+    //Declaraciï¿½nes
     private InputManager _input;
     private EventInstance _hideEventInstance;
     private EventInstance _moveEventInstance;
@@ -23,7 +23,7 @@ public class SnakeSound : MonoBehaviour
 
     public void EatSound()
     {
-        RuntimeManager.PlayOneShotAttached(eatSfx, player);
+        RuntimeManager.PlayOneShotAttached(eatSfx, _player.gameObject);
     }
 
     //public void EatTransformSound()
@@ -43,7 +43,7 @@ public class SnakeSound : MonoBehaviour
         _hideEventInstance = RuntimeManager.CreateInstance(hide);
         _moveEventInstance = RuntimeManager.CreateInstance(moveSfx);
 
-        RuntimeManager.AttachInstanceToGameObject(_moveEventInstance, player);
+        RuntimeManager.AttachInstanceToGameObject(_moveEventInstance, _player.gameObject);
 
     }
 
@@ -95,12 +95,18 @@ public class SnakeSound : MonoBehaviour
         // CODIGO SONIDO DE CAMINAR
         PLAYBACK_STATE state;
         _moveEventInstance.getPlaybackState(out state);
-        Debug.Log("State before if " + state);
+        //Debug.Log("State before if " + state);
         if (state == PLAYBACK_STATE.PLAYING && _input.MovementValue == Vector2.zero) // elif is playing and not walking -> stop
         {
             _moveEventInstance.stop(STOP_MODE.ALLOWFADEOUT);
             //_moveEventInstance.release();
         }
-        Debug.Log("State after   if " + state);
+        //Debug.Log("State after   if " + state);
+    }
+
+    
+    private void OnDestroy()
+    {
+        _hideEventInstance.release();
     }
 }

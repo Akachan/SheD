@@ -190,6 +190,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867349927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7105009398085237114, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+  m_PrefabInstance: {fileID: 641306970169967218}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f3667a60dc22946a52b70ecc89cdcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1039115308
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3196401705756986253, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4410274376105169387, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -419,10 +434,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4513456803299810943, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513456803299810943, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513456803299810943, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 867349927}
+    - target: {fileID: 4513456803299810943, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513456803299810943, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCreditsButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513456803299810943, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513456803299810943, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6722448944923021181, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1039115310}
+    - target: {fileID: 7347699697104313046, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCreditsCloseButtonClick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

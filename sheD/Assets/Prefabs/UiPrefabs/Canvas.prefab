@@ -702,6 +702,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -31.494999
       objectReference: {fileID: 0}
+    - target: {fileID: 1765482318231227240, guid: 611d7e2d062301248ae44876ae334cc2, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765482318231227240, guid: 611d7e2d062301248ae44876ae334cc2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c2eee3173fc76f646b0577a5bf1b2df4, type: 3}
+    - target: {fileID: 2669806771023525974, guid: 611d7e2d062301248ae44876ae334cc2, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: c2eee3173fc76f646b0577a5bf1b2df4, type: 3}
     - target: {fileID: 3709644351252629934, guid: 611d7e2d062301248ae44876ae334cc2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

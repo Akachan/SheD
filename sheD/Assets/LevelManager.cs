@@ -65,13 +65,13 @@ public class LevelManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(enemyTransform.position, enemyDetectionRadius);
+        //Gizmos.color = Color.red;
+       // Gizmos.DrawWireSphere(enemyTransform.position, enemyDetectionRadius);
     }
 
     private void OnValidate()
     {
-        enemyDetectionCollider.radius = enemyDetectionRadius * 1/enemyTransform.localScale.x;
+        //enemyDetectionCollider.radius = enemyDetectionRadius * 1/enemyTransform.localScale.x;
         
     }
 
