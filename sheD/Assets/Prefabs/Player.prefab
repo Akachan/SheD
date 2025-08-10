@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1545105541432700269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6494238290121104404}
+  m_Layer: 7
+  m_Name: DeadParticlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6494238290121104404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545105541432700269}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.66, y: 3.59, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2578966177156416992}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2785144521158497498
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6e2aae7e2262b4493b179dad3e21f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadParticle: {fileID: 1143241155749815163, guid: d659c2ae8a84a91499238e4b147b03b0, type: 3}
+  deadParticleTransform: {fileID: 6494238290121104404}
 --- !u!1 &8082478205674140372
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +150,7 @@ Transform:
   m_Children:
   - {fileID: 2791375923804957139}
   - {fileID: 8033237260198126589}
+  - {fileID: 6494238290121104404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6408696166602921837

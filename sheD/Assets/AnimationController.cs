@@ -9,6 +9,7 @@ public class AnimationController : MonoBehaviour
     private static readonly int OnEat = Animator.StringToHash("onEat");
     private static readonly int IsHiding = Animator.StringToHash("isHiding");
     private static readonly int SetCamouflageBlend = Animator.StringToHash("SetCamouflageBlend");
+    private static readonly int OnCapture = Animator.StringToHash("onCapture");
     private Animator _animatorController;
     private InputManager _input;
     private Player _player;
@@ -43,6 +44,11 @@ public class AnimationController : MonoBehaviour
     public void SetHidingBlend(float value)
     {
         _animatorController.SetFloat(SetCamouflageBlend, value);
+    }
+
+    public void SetOnCapture()
+    {
+        _animatorController.SetTrigger(OnCapture);
     }
     
 }
