@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
    private void Update()
    {
-      Camuflaje();
+      //Camuflaje();
       MovePlayer();
    }
    
@@ -65,6 +65,9 @@ public class Player : MonoBehaviour
          
       }
    }
+   
+   
+   //Outdated
    private void RemoveCamouflage()
    {
       var color = _spriteRenderer.color;
