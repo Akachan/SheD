@@ -12,6 +12,7 @@ public class LeeMover : MonoBehaviour
    private int _indexPath = 1;
    private Transform[] _currentPath = null;
    private SpriteRenderer _leeSprite;
+   private bool _isStopped = false;
 
    private void Awake()
    {
@@ -23,6 +24,7 @@ public class LeeMover : MonoBehaviour
    private void Update()
    {
       if (!lee.activeSelf) return;
+      if (_isStopped) return;
       if (_currentPath == null)
       {
          GetRandomPath();
@@ -65,5 +67,10 @@ public class LeeMover : MonoBehaviour
       Random random = new Random();
       _currentPath = path[random.Next(0, path.Length)].GetComponentsInChildren<Transform>();
       
+   }
+
+   public void StopLee()
+   {
+      _isStopped = true;
    }
 }

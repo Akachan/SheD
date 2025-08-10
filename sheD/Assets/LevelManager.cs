@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -72,5 +73,17 @@ public class LevelManager : MonoBehaviour
     {
         enemyDetectionCollider.radius = enemyDetectionRadius * 1/enemyTransform.localScale.x;
         
+    }
+
+
+    public IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(2);
+        UiManager.Instance.EnableGameOverPanel();
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
