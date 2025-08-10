@@ -158,9 +158,10 @@ GameObject:
   - component: {fileID: 4005782650184065285}
   - component: {fileID: 8480830707691824000}
   - component: {fileID: 7501078022310942327}
-  - component: {fileID: 7998523625437569021}
   - component: {fileID: 3144687770668300077}
-  - component: {fileID: 8965506475906685604}
+  - component: {fileID: 1759076068046242571}
+  - component: {fileID: 1027247483076060887}
+  - component: {fileID: 9106769623748230053}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -426,7 +427,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &7998523625437569021
+--- !u!114 &3144687770668300077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082478205674140372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c229d8ae7e728645a71df761c8b7156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1759076068046242571
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -447,7 +460,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3144687770668300077
+--- !u!114 &1027247483076060887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -459,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c229d8ae7e728645a71df761c8b7156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8965506475906685604
+--- !u!114 &9106769623748230053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -468,7 +481,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8082478205674140372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87c79f94b594674a853b1e1bcab64e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 92832e41699e0ef42ae08c04a9d2115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eatSfx:
