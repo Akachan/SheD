@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
@@ -9,9 +10,14 @@ public class Player : MonoBehaviour
    //private float moveSpeed = 5f;
    private SpriteRenderer _spriteRenderer;
    [SerializeField] GameObject foodArea;
+   [SerializeField] Transform leftVsfPosition;
+   [FormerlySerializedAs("rightVsfPosition")] [SerializeField] Transform rightVfxPosition;
    private Eat _eat;
    private bool _isCamouflaged = false;
    private bool _isIdle;
+
+   private VsfPosition _currentVfxPosition;
+   public VsfPosition CurrentVfxPosition => _currentVfxPosition;
    public bool IsIdle => _isIdle;
    public bool IsCamuflaged
    {
@@ -19,6 +25,11 @@ public class Player : MonoBehaviour
       set => _isCamouflaged = value;
    }
 
+   public struct VsfPosition
+   {
+      public Transform VsfTransform;
+      public float VsfScale;
+   }
 
    private void Awake()
    {
@@ -58,10 +69,32 @@ public class Player : MonoBehaviour
    {
       if (_input.MovementValue.x != 0)
       {
+         //flipeo sprite
          _spriteRenderer.flipX = _input.MovementValue.x < 0;
+         
+         //flipeo el area de comida
          var scale = foodArea.transform.localScale;
          scale.x = _input.MovementValue.x < 0 ? -1 : 1;
          foodArea.transform.localScale = scale;
+         
+         //flipeo la ubicación del vsf
+         if (_spriteRenderer.flipX)
+         {
+            _currentVfxPosition = new VsfPosition()
+            {
+               VsfTransform = leftVsfPosition,
+               VsfScale = -1
+            };
+         }
+         else
+         {
+            _currentVfxPosition = new VsfPosition()
+            {
+               VsfTransform = rightVfxPosition,
+               VsfScale = 1
+            };
+         }
+         
          
       }
    }
