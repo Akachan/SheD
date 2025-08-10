@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1969629711626436397}
   m_Layer: 0
-  m_Name: SimpleFood
+  m_Name: palitos chinos prueba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
