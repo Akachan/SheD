@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
    [SerializeField] GameObject foodArea;
    private Eat _eat;
    private bool _isCamouflaged = false;
+   private bool _isIdle;
+   public bool IsIdle => _isIdle;
    public bool IsCamuflaged
    {
       get => _isCamouflaged;
@@ -25,7 +27,7 @@ public class Player : MonoBehaviour
       _eat = FindFirstObjectByType<Eat>();
    }
 
-   private void FixedUpdate()
+   private void Update()
    {
       Camuflaje();
       MovePlayer();
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour
       transform.Translate(movement * Time.fixedDeltaTime, Space.World);
       
       FlipPlayerToViewDirection();
+      
    }
 
    private void FlipPlayerToViewDirection()
