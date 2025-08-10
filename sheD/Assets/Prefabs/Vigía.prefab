@@ -78,7 +78,8 @@ GameObject:
   - component: {fileID: 9192136948218945737}
   - component: {fileID: 1156115458681861707}
   - component: {fileID: 1533900101981104972}
-  m_Layer: 0
+  - component: {fileID: 5951213604156169109}
+  m_Layer: 9
   m_Name: lee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -186,4 +187,25 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 35.04
+  m_Radius: 10
+--- !u!95 &5951213604156169109
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3085499302350402812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 289dbe91ae2cbce48b181389284e1b33, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
