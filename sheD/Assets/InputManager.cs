@@ -17,17 +17,7 @@ public class InputManager : MonoBehaviour
     
     public void OnMove(InputValue value)
     {
-        if (!_isActive)
-        {
-            _movementValue = new Vector2(0, 0);
-            
-        }
-        else
-        {
-            _movementValue = value.Get<Vector2>();
-        }
-        
-        
+        _movementValue = !_isActive ? new Vector2(0, 0) : value.Get<Vector2>();
     }
 
     public void OnEat(InputValue value)
@@ -40,8 +30,12 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    
+    
+    
     public void SetInputActive(bool value)
     {
         _isActive = value;
+        _movementValue = Vector2.zero;
     }
 }

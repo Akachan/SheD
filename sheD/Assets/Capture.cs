@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Capture : MonoBehaviour
 {
     [SerializeField] private GameObject deadParticle;
-    [SerializeField] private Transform deadParticleTransform;
     private Player _player;
     private InputManager _input;
     private AnimationController _animationController;
@@ -38,16 +37,28 @@ public class Capture : MonoBehaviour
         //Desabilito controles
         _input.SetInputActive(false);
         
-        //Zoom dramático
-        
-        
-        //Animación de sorpresa
+
+        //Animación de sorpresa/ansiedad
         _animationController.SetOnCapture();
-        var instance = Instantiate(deadParticle, deadParticleTransform.position, Quaternion.identity, deadParticleTransform);
+        
+        //Zoom dramático
+        // -> se activó con el estado onCapture
+
+        
+        //Seteo posición de particulas
+        var instance = Instantiate(deadParticle, _player.CurrentVfxPosition.VsfTransform.position, Quaternion.identity, _player.CurrentVfxPosition.VsfTransform);
+        
+        //la flipeo si está mirando a la izq o der
+        var scale = instance.transform.localScale;
+        scale.x = _player.CurrentVfxPosition.VsfScale;
+        instance.transform.localScale = scale;
         
         
         
-        //TimeScale =0
+        //TimeScale =0 -> no sirve hay que parar a los lee (pa mas tarde)
+        
+        
+        
         //Serpentina estrangulada
         
         //Go to main menu
