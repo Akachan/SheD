@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &591486223086118614
+--- !u!1001 &6709726729777566471
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -18,23 +18,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 994999669856695966, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 994999669856695966, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 994999669856695966, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 994999669856695966, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 994999669856695966, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 994999669856695966, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
       propertyPath: m_SizeDelta.y
@@ -89,16 +89,56 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2207308357767276644, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
-      propertyPath: m_text
-      value: Menu
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6297875213589013268, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
-      propertyPath: m_Name
-      value: BackToMenuText
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.8144023
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.8679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.63456744
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.63529414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.63529414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722323210570262638, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509690281917257883, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509690281917257883, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
+      propertyPath: m_Color.g
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8831889788265860527, guid: cf06f47704632fd4d905ae04a4e18775, type: 3}
       propertyPath: m_Name
-      value: BackToMenuButton Variant
+      value: BaseMainMenuButton Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

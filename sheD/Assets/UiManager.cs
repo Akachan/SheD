@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
    [SerializeField] private GameObject gameOverPanel;
+   [SerializeField] private GameObject winPanel;
    
    public static UiManager Instance { get; private set; }
 
@@ -21,10 +23,19 @@ public class UiManager : MonoBehaviour
    {
       gameOverPanel.SetActive(true);
    }
+   public void EnableWinPanel()
+   {
+      winPanel.SetActive(true);
+   }
 
 
    public void OnRestartButtonClick()
    {
       LevelManager.Instance.RestartScene();
+   }
+
+   public void OnBackToMenuButtonClick()
+   {
+      SceneManager.LoadScene("MainMenu");
    }
 }

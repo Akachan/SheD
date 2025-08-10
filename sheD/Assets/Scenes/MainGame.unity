@@ -434,6 +434,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7badf7f95baed064f801ee028984e833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1113740013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4918262714743891482, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+  m_PrefabInstance: {fileID: 1744593428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d0af0c1f15d1c409e374ac0fc4fdda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1329511267
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +642,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1670373243381538625, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1113740013}
+    - target: {fileID: 1670373243381538625, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnBackToMenuButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786637707694381580, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786637707694381580, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786637707694381580, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786637707694381580, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -68.505
+      objectReference: {fileID: 0}
     - target: {fileID: 3358434718840240170, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -713,6 +748,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3543815706844020125, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917540200690147148, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917540200690147148, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917540200690147148, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917540200690147148, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -31.494999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237751634310973289, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

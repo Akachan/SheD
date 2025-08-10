@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Capture : MonoBehaviour
 {
+    private static readonly int OnStop = Animator.StringToHash("onStop");
     [SerializeField] private GameObject deadParticle;
     private Player _player;
     private InputManager _input;
@@ -44,9 +45,10 @@ public class Capture : MonoBehaviour
         //Zoom dramático
         // -> se activó con el estado onCapture
 
-        
+        var current = _player.CurrentVfxPosition;
         //Seteo posición de particulas
-        var instance = Instantiate(deadParticle, _player.CurrentVfxPosition.VsfTransform.position, Quaternion.identity, _player.CurrentVfxPosition.VsfTransform);
+        
+        var instance = Instantiate(deadParticle, current.VsfTransform.position, Quaternion.identity, current.VsfTransform);
         
         //la flipeo si está mirando a la izq o der
         var scale = instance.transform.localScale;
@@ -59,7 +61,9 @@ public class Capture : MonoBehaviour
         var lees = FindObjectsOfType<LeeMover>();
         foreach (var lee in lees)
         {
+            
             lee.StopLee();
+            lee.GetComponentInChildren<Animator>().SetTrigger(OnStop);
         }
         
         //Serpentina estrangulada
@@ -67,7 +71,7 @@ public class Capture : MonoBehaviour
         //Go to main menu
         
         
-        StartCoroutine((LevelManager.Instance.EndGame()));
+        StartCoroutine((LevelManager.Instance.EndGame(EndGameType.Lose)));
     }
 
 
