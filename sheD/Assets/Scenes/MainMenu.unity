@@ -470,6 +470,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnCreditsCloseButtonClick
       objectReference: {fileID: 0}
+    - target: {fileID: 8217580448335956550, guid: 846cf6cead85f3748a67aa1740bd81c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
