@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UiManager : MonoBehaviour
 {
@@ -31,5 +32,10 @@ public class UiManager : MonoBehaviour
    public void OnRestartButtonClick()
    {
       LevelManager.Instance.RestartScene();
+   }
+
+   public void OnBackToMenuButtonClick()
+   {
+      SceneManager.LoadScene("MainMenu");
    }
 }
