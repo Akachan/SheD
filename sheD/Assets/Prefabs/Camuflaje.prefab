@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4408603017776317914}
   - component: {fileID: 1235114920242103608}
   - component: {fileID: 1495135314044560893}
+  - component: {fileID: -5397235457302197611}
   m_Layer: 0
   m_Name: Camuflaje
   m_TagString: Camuflaje
@@ -120,3 +121,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.47774792, y: -3.8681655}
   m_Size: {x: 7.3420167, y: 7.3420167}
   m_Direction: 0
+--- !u!114 &-5397235457302197611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095886192219274648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6225898b1927eba4fa54f610aebd5954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodType: 0

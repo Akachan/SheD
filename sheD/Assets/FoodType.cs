@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class FoodType : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private FoodTypeName foodType;
+
+    public FoodTypeName GetFoodType()
     {
-        
+        return foodType;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
-/*
-public class Food()
-{
-    [
-}
-*/
 
 public enum FoodTypeName
 {
-    NormalFood,
-    Camouflage
+    Chair,
+    Box
 }

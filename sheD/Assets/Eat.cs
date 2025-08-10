@@ -113,7 +113,7 @@ public class Eat : MonoBehaviour
             StartCoroutine(CamouflageObjectHider());
             PlayCamouflageEatSfx();
             FindFirstObjectByType<AnimationController>().SetOnEat();
-            FindFirstObjectByType<AnimationController>().SetHidingBlend(0);
+            FindFirstObjectByType<AnimationController>().SetHidingBlend((float)_camouflageObject.GetComponent<FoodType>().GetFoodType());
     }
 
     IEnumerator CamouflageObjectHider()
