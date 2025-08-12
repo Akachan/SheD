@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using Food;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -12,17 +14,22 @@ public class Player : MonoBehaviour
    [SerializeField] GameObject foodArea;
    [SerializeField] Transform leftVsfPosition;
    [FormerlySerializedAs("rightVsfPosition")] [SerializeField] Transform rightVfxPosition;
-   private Eat _eat;
+   
+   [SerializeField] private AnimationController animation;
    private bool _isCamouflaged = false;
    private bool _isIdle;
 
+   private float _currentTime = 0f;
+
+   
+   //cosas de vsf
    private VsfPosition _currentVfxPosition;
    public VsfPosition CurrentVfxPosition => _currentVfxPosition;
-   public bool IsIdle => _isIdle;
+
    public bool IsCamuflaged
    {
       get => _isCamouflaged;
-      set => _isCamouflaged = value;
+      private set => _isCamouflaged = value;
    }
 
    public struct VsfPosition
@@ -35,15 +42,42 @@ public class Player : MonoBehaviour
    {
       _input = FindFirstObjectByType<InputManager>();
       _spriteRenderer = GetComponent<SpriteRenderer>();
-      _eat = FindFirstObjectByType<Eat>();
+      
    }
 
    private void Update()
    {
-      //Camuflaje();
       MovePlayer();
+      ConsumeCamouflageResource();
    }
-   
+
+   private void ConsumeCamouflageResource()
+   {
+      
+      
+      if (IsCamuflaged)
+      {
+         print(LevelManager.Instance.FoodInventory.GetFoodCount(CommonFoodTypeName.NormalFood));
+         _currentTime += Time.deltaTime;
+         
+         if (LevelManager.Instance.FoodInventory.ConsumeCamouflageFood(_currentTime))
+         {
+            _currentTime = 0f;
+         }
+         if (LevelManager.Instance.FoodInventory.IsEmptyCamouflageFood())
+         {
+           
+            RemoveCamouflage();
+         }
+      }
+      else
+      {
+         _currentTime = 0;
+      }
+      
+      
+   }
+
 
    private void MovePlayer()
    {
@@ -51,9 +85,17 @@ public class Player : MonoBehaviour
       transform.Translate(movement * Time.deltaTime, Space.World);
       
       FlipPlayerToViewDirection();
+
       
+      //En caso de que el player esté camuflado y se mueva, perderá el camuflaje
+      if (_input.MovementValue != Vector2.zero && IsCamuflaged)
+      {
+         print("se movió");
+         RemoveCamouflage();
+      }
    }
 
+   //todo: Arregla toda esta aberración
    private void FlipPlayerToViewDirection()
    {
       if (_input.MovementValue.x != 0)
@@ -61,7 +103,7 @@ public class Player : MonoBehaviour
          //flipeo sprite
          _spriteRenderer.flipX = _input.MovementValue.x < 0;
          
-         //flipeo el area de comida
+         //flipeo el área de comida
          var scale = foodArea.transform.localScale;
          scale.x = _input.MovementValue.x < 0 ? -1 : 1;
          foodArea.transform.localScale = scale;
@@ -88,31 +130,24 @@ public class Player : MonoBehaviour
       }
    }
    
-   
-   //Outdated ******************************************
-   private void RemoveCamouflage()
+   //CAMUFLAJE***************************************
+   public void SetCamouflage (CamouflageFoodTypeName camouflageFoodType)
    {
-      var color = _spriteRenderer.color;
-      color.a = 1f;
-      _spriteRenderer.color = color;
+      IsCamuflaged = true;
+      animation.SetOnEat();
+      animation.SetHidingBlend((float)camouflageFoodType);
    }
 
-   private void SetCamouflage()
+   private void RemoveCamouflage()
    {
-      var color = _spriteRenderer.color;
-      color.a = 0.5f;
-      _spriteRenderer.color = color;
+      print("camuflaje off");
+      IsCamuflaged = false;
+      
+      
    }
    
-   private void Camuflaje()
-   {
-      if (IsCamuflaged)
-      {
-         SetCamouflage();
-      }
-      else
-      {
-         RemoveCamouflage();
-      }
-   }
+
+
+   
+   
 }

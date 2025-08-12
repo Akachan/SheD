@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Food;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -8,7 +9,8 @@ using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
-    
+
+   
     [SerializeField] private int foodValueToWin = 20;
     
     [Header("Player Settings")]
@@ -18,13 +20,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField]private float enemySpeed = 1f;
     [SerializeField] private float enemySpawnDelay = 10f;
     [SerializeField] private float enemyDetectionRadius = 5f;
-    
+
     [Header("Food Settings")]
-    [SerializeField] private int minFoodValue = 1;
-    [SerializeField] private int maxFoodValue = 10;
-    
-    [SerializeField] private int camouflageFoodValue = 1;
-    [SerializeField] private float foodConsumptionRate = 1f;
+    [SerializeField] private List<FoodContainer> foodContainers = new List<FoodContainer>();
+
     
     
     private int _currentFoodCount;
@@ -33,12 +32,11 @@ public class LevelManager : MonoBehaviour
     public float PlayerSpeed => playerSpeed;
     public float EnemySpeed => enemySpeed;
     public float EnemySpawnDelay => enemySpawnDelay;
-    public float EnemyDectionRadious => enemyDetectionRadius;
-    public int FoodValue => Random.Range(minFoodValue, maxFoodValue);
-    public int CamouflageFoodValue => camouflageFoodValue;
-    public float FoodConsumptionRate => 1/foodConsumptionRate;
 
-   
+
+    public FoodInventory FoodInventory { get; private set; }
+
+
     public int CurrentFoodCount 
     {
         get => _currentFoodCount; 
@@ -60,7 +58,12 @@ public class LevelManager : MonoBehaviour
             Destroy(this);
         }
         else Instance = this;
+        
+        FoodInventory = new FoodInventory(foodContainers);
+        
     }
+
+
 
 
     private void OnDrawGizmos()
