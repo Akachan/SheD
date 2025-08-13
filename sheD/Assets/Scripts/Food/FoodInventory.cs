@@ -7,18 +7,15 @@ using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
-
-
-
-
 namespace Food
 {
     public class FoodInventory
     {
         private Dictionary<CommonFoodTypeName, FoodContainer> _inventory = new Dictionary<CommonFoodTypeName, FoodContainer>();
-        private CommonFoodTypeName _camouflageReSourceFood;
-
-
+        private CommonFoodTypeName _camouflageResourceFood;
+        
+        public event Action<CommonFoodTypeName> OnFoodChange;
+        
         public FoodInventory(List<FoodContainer> containers)
         {
             CreateInventory(containers);
@@ -36,28 +33,38 @@ namespace Food
                 Debug.Log($"Nombre: {container.FoodType} - Contenido: {container.CurrentCount}");
                 if (container.IsCamouflageResource)
                 {
-                    _camouflageReSourceFood = container.FoodType;
+                    _camouflageResourceFood = container.FoodType;
                 }
             }
+            
         }
         
         public void AddFood(CommonFoodTypeName food)
         {
             _inventory[food].AddFood();
+            
+            OnFoodChange?.Invoke(food);
         }
 
         public int GetFoodCount(CommonFoodTypeName food)
         {
             return _inventory[food].CurrentCount;
         }
+
+        public float GetFoodRatio(CommonFoodTypeName food)
+        {
+            return _inventory[food].FoodContainerFillRatio;
+        }
         
         
         //CamouflageResource Only
         public bool ConsumeCamouflageFood(float time)
         {
-            if (time >= _inventory[_camouflageReSourceFood].TimeToRemoveResource)
+            if (time >= _inventory[_camouflageResourceFood].TimeToRemoveResource)
             {
-                _inventory[_camouflageReSourceFood].RemoveFood();
+                _inventory[_camouflageResourceFood].RemoveFood();
+                
+                OnFoodChange?.Invoke(_camouflageResourceFood);
                 return true;
             }
             return false;
@@ -65,9 +72,11 @@ namespace Food
 
         public bool IsEmptyCamouflageFood()
         {
-            return _inventory[_camouflageReSourceFood].CurrentCount == 0;
+            return _inventory[_camouflageResourceFood].CurrentCount == 0;
         }
     }
+
+
     
    
     
