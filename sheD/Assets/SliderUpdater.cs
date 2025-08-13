@@ -23,16 +23,21 @@ public class SliderUpdater : MonoBehaviour
 
         var ratio = LevelManager.Instance.FoodInventory.GetFoodRatio(foodName);
         sliderBar.fillAmount = ratio;
+        
+        print($" inicializado {foodName}, con {foodCount} elemento y un ratio de {ratio}");
     }
 
     public void UpdateSlider (CommonFoodTypeName foodName)
     {
 
-        var foodcCount = LevelManager.Instance.FoodInventory.GetFoodCount(foodName);
-        valueText.text = foodcCount.ToString();
+        var foodCount = LevelManager.Instance.FoodInventory.GetFoodCount(foodName);
+        valueText.text = foodCount.ToString();
 
         var ratio = LevelManager.Instance.FoodInventory.GetFoodRatio(foodName);
         sliderBar.fillAmount = ratio;
+        
+        
+        print($" actualizado {foodName}, con {foodCount} elemento y un ratio de {ratio}");
     }
 
 

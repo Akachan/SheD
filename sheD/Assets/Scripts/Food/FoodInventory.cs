@@ -53,7 +53,7 @@ namespace Food
 
         public float GetFoodRatio(CommonFoodTypeName food)
         {
-            return _inventory[food].FoodContainerFillRatio;
+            return _inventory[food].FoodContainerFillRatio();
         }
         
         

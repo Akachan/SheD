@@ -22,7 +22,8 @@ namespace Food
         public CommonFoodTypeName FoodType => foodType;
         public bool IsCamouflageResource => isCamouflageResource;
         public int CurrentCount => _currentCount;
-        public int FoodContainerFillRatio => _currentCount / maxCount;
+
+     
         public float TimeToRemoveResource => 1 / consumptionRate;
 
         public void InitializeContainer()
@@ -40,6 +41,17 @@ namespace Food
         {
             _currentCount = Mathf.Clamp(_currentCount -1, 0, maxCount);
            
+        }
+        public float FoodContainerFillRatio()
+        {
+            if (maxCount == 0)
+            {
+                Debug.LogWarning("No se ingresó el valor de MaxCount");
+                return 0f;
+            }
+
+            return _currentCount / (float)maxCount;
+
         }
     }
 
