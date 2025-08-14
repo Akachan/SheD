@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6835437356910780025}
   - component: {fileID: 3550531090552621307}
   - component: {fileID: 3748366879858333180}
+  - component: {fileID: 349691583015883140}
   m_Layer: 9
   m_Name: lee
   m_TagString: Enemy
@@ -120,6 +121,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
+--- !u!95 &349691583015883140
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836746567133219404}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 289dbe91ae2cbce48b181389284e1b33, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2717342994364458052
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +154,7 @@ GameObject:
   - component: {fileID: 692006285528824125}
   - component: {fileID: 3873598804862279863}
   m_Layer: 9
-  m_Name: lee 2
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +203,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lee: {fileID: 836746567133219404}
   path:
-  - {fileID: 1385049324451932499, guid: c30b8a56ec0e5c8429db30eef043800c, type: 3}
-  - {fileID: 188548521793029521, guid: 31f9db0132965b147bd09b5bd56c8ffb, type: 3}
-  - {fileID: 2244251578284512496, guid: b7a83ac831bbf694f925676bcdcae685, type: 3}
-  - {fileID: 6680617295868357102, guid: 07f2a6e88ca4c5e419cdfeef203d125e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}

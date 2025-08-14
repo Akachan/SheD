@@ -4,6 +4,7 @@ using UnityEngine;
 using FMODUnity;
 using System;
 using FMOD.Studio;
+using Food;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 
@@ -49,6 +50,7 @@ public class SnakeSound : MonoBehaviour
 
     public void Hide()
     {
+        Debug.Log("Hide");
         _hideEventInstance.start();
     }
 
@@ -68,26 +70,16 @@ public class SnakeSound : MonoBehaviour
 
     void HandleHideSound()
     {
+        //Verifico el estado del player
         int state = 0;
-        if (_player.IsCamuflaged)
-        {
-            state = 1;
-        }
-        else
-        {
-            state = 0;
-        }
+        state = _player.IsCamuflaged ? 1 : 0;
+        //Aplico el parametro
         _hideEventInstance.setParameterByName("SnakeState", state);
 
-        float foodAmount = Mathf.Clamp(LevelManager.Instance.CurrentFoodCount / (float)LevelManager.Instance.FoodValueToWin, 0, 1f); ;
-
-        _hideEventInstance.setParameterByName("FoodAmount", foodAmount);
-
-        float foodParameter;
-        _hideEventInstance.getParameterByName("FoodAmount", out foodParameter);
-
-        //Debug.Log("Food on FMOD event: " + foodParameter);
-        //Debug.Log("Food: " + foodAmount + ". SnakeState: " + state);
+        //Tomo el ratio del invetario
+        var foodRatio = LevelManager.Instance.FoodInventory.GetCamouflageFoodRatio();
+        //Aplico el parámetro
+        _hideEventInstance.setParameterByName("FoodAmount", foodRatio);
     }
 
     void HandleWalkSound()

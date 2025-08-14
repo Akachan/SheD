@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
       
       if (IsCamuflaged)
       {
-         print(LevelManager.Instance.FoodInventory.GetFoodCount(CommonFoodTypeName.NormalFood));
+ 
          _currentTime += Time.deltaTime;
          
          if (LevelManager.Instance.FoodInventory.ConsumeCamouflageFood(_currentTime))

@@ -55,7 +55,11 @@ namespace Food
         {
             return _inventory[food].FoodContainerFillRatio();
         }
-        
+
+        public float GetCamouflageFoodRatio()
+        {
+            return GetFoodRatio(_camouflageResourceFood);
+        }
         
         //CamouflageResource Only
         public bool ConsumeCamouflageFood(float time)
