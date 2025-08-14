@@ -1,104 +1,127 @@
-using UnityEngine;
-using FMODUnity; // Asegúrate de tener la integración de FMOD en tu proyecto
+// Asegï¿½rate de tener la integraciï¿½n de FMOD en tu proyecto
 using FMOD.Studio;
-using static UnityEngine.Rendering.DebugUI;
+using FMODUnity;
+using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace Audio
 {
-    // --- Singleton Pattern ---
-    // La instancia estática pública que será accesible desde cualquier otro script.
-    public static AudioManager Instance { get; private set; }
-
-    [SerializeField] private EventReference mainMusicRef;
-    private EventInstance _musicEventInstance;
-
-    private Player _player;
-
-
-
-
-
-    // Nombre exacto del parámetro global en FMOD Studio
-    public string globalParameterName = "GameState";
-
-    // Valor que quieres asignar
-    public float newValue = 0f;
-
-    void Start()
+    public class AudioManager : MonoBehaviour
     {
-        SetGlobalParameter(newValue);
-    }
+        // --- Singleton Pattern ---
+        // La instancia estï¿½tica pï¿½blica que serï¿½ accesible desde cualquier otro script.
+        public static AudioManager Instance { get; private set; }
 
-    public void SetGlobalParameter(float value)
-    {
-        FMOD.Studio.System system = RuntimeManager.StudioSystem;
-        // Cambia el valor del parámetro global
-        system.setParameterByName(globalParameterName, value);
-    }
+        [SerializeField] private EventReference mainMusicRef;
+        private EventInstance _musicEventInstance;
 
+        private Player _player;
 
 
 
-    private void Awake()
-    {
-        if (Instance == null)
+
+
+        // Nombre exacto del parï¿½metro global en FMOD Studio
+        public string globalParameterName = "GameState";
+
+        // Valor que quieres asignar
+        public float newValue = 0f;
+
+    
+        private void Awake()
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            Debug.Log("AudioManager: Creada nueva instancia del Singleton.");
-        }
-        else
-        {
-            Destroy(gameObject);
-            Debug.Log("AudioManager: Se encontró otra instancia, esta ha sido destruida.");
+            Singleton();
+            FindPlayerReference();
         }
 
-
-        _player = FindObjectOfType<Player>();
-
-    }
-
-    private void Update()
-    {
-        CheckSnakeState();
-    }
-
-
-    void CheckSnakeState()
-    {
-        int state = 0;
-        if (_player.IsCamuflaged)
+        private void Update()
         {
-            state = 1;
+            CheckSnakeState();
+            
         }
-        else
+        private void Singleton()
         {
-            state = 0;
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+                Debug.Log("AudioManager: Creada nueva instancia del Singleton.");
+            }
+            else
+            {
+                Destroy(gameObject);
+                Debug.Log("AudioManager: Se encontrï¿½ otra instancia, esta ha sido destruida.");
+            }
         }
 
-        FMOD.Studio.System system = RuntimeManager.StudioSystem;
-        // Cambia el valor del parámetro global
-        system.setParameterByName("GlobalSnakeState", state);
-
-        //_musicEventInstance.setParameterByName("SnakeState", state);
-    }
-
-
-
-
-
-
-
-
-
-    // --- Lógica de FMOD ---
-    // Un método de ejemplo para reproducir un sonido 2D (One-Shot).
-    public void PlayOneShot(EventReference soundEvent)
-    {
-        // Verifica que la referencia del evento no esté vacía antes de intentar reproducirlo.
-        if (!soundEvent.IsNull)
+        public void SetGlobalParameter(float value)
         {
-            RuntimeManager.PlayOneShot(soundEvent);
+            FMOD.Studio.System system = RuntimeManager.StudioSystem;
+            // Cambia el valor del parï¿½metro global
+            system.setParameterByName(globalParameterName, value);
+        }
+
+
+        void CheckSnakeState()
+        {
+            
+            if (_player == null) return;
+            
+            int state = 0;
+            state = _player.IsCamuflaged ? 1 : 0;
+
+            // Cambia el valor del parï¿½metro global
+            
+            
+            FMOD.Studio.System system = RuntimeManager.StudioSystem;
+            // Cambia el valor del parï¿½metro global
+            system.setParameterByName("GlobalSnakeState", state);
+            
+            
+        }
+
+  
+        //ESTO ES LLAMADO CUANDO SE CAMBIA UNA ESCENA
+        
+        //Setea la musica para el main MenÃº
+        public void SetMainMenuMusic()
+        {
+            Debug.Log("SetGamePlayMusic");
+            SetGlobalParameter(0);
+        }
+
+        //Setea la musica para el juego y como es llamado en la carga de una nueva escena
+        //tambien busca la referencia al player
+        public void SetGamePlayMusic()
+        {
+            Debug.Log("SetGamePlayMusic");
+            SetGlobalParameter(1);
+            FindPlayerReference();
+        }
+
+        private void FindPlayerReference()
+        {
+            _player = FindFirstObjectByType<Player>();
+            if (_player == null)
+            {
+                Debug.LogWarning("El jugador no ha sido encontrado en la escena");
+            }
+        }
+
+
+
+
+
+
+
+        // --- Lï¿½gica de FMOD ---
+        // Un mï¿½todo de ejemplo para reproducir un sonido 2D (One-Shot).
+        public void PlayOneShot(EventReference soundEvent)
+        {
+            // Verifica que la referencia del evento no estï¿½ vacï¿½a antes de intentar reproducirlo.
+            if (!soundEvent.IsNull)
+            {
+                RuntimeManager.PlayOneShot(soundEvent);
+            }
         }
     }
 }
