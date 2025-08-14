@@ -31,6 +31,8 @@ namespace Audio
         {
             Singleton();
             FindPlayerReference();
+
+           
         }
 
         private void Update()
@@ -105,7 +107,9 @@ namespace Audio
             {
                 Debug.LogWarning("El jugador no ha sido encontrado en la escena");
             }
+
         }
+
 
 
 
