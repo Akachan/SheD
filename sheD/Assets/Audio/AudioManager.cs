@@ -109,6 +109,20 @@ namespace Audio
             }
 
         }
+        
+        public void SetPauseBgm()
+        {
+           //poner la musica de pausa
+           Debug.Log("SetPauseBgm");
+           
+           
+        }
+
+        public void RemovePauseBgm()
+        {
+            //volver a poner la música de gameplay
+            Debug.Log("RemovePauseBgm");
+        }
 
 
 
@@ -127,5 +141,7 @@ namespace Audio
                 RuntimeManager.PlayOneShot(soundEvent);
             }
         }
+
+
     }
 }
