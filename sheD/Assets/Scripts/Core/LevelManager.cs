@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
     [Header("Enemy Settings")] 
     [SerializeField]private float enemySpeed = 1f;
     [SerializeField] private float enemySpawnDelay = 10f;
-    [SerializeField] private float enemyDetectionRadius = 5f;
+    
 
     [Header("Food Settings")]
     [SerializeField] private List<FoodContainer> foodContainers = new List<FoodContainer>();
