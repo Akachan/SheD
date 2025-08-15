@@ -2535,6 +2535,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163059307856257665, guid: c326e07528eb3aa4798280a979d091dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2191.8557
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163059307856257665, guid: c326e07528eb3aa4798280a979d091dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -218.32666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845668428588960252, guid: c326e07528eb3aa4798280a979d091dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.809326
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028785906549287787, guid: c326e07528eb3aa4798280a979d091dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.859131
+      objectReference: {fileID: 0}
     - target: {fileID: 9169436569826534478, guid: c326e07528eb3aa4798280a979d091dd, type: 3}
       propertyPath: m_Follow
       value: 
@@ -2678,13 +2694,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1956005078218924407, guid: 2c1363c752ad32c4cab5415fdde4c7eb, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Keyboard&Mouse
-      objectReference: {fileID: 0}
     - target: {fileID: 2578966177156416992, guid: 2c1363c752ad32c4cab5415fdde4c7eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.4
+      value: -2.85
       objectReference: {fileID: 0}
     - target: {fileID: 2578966177156416992, guid: 2c1363c752ad32c4cab5415fdde4c7eb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2721,6 +2733,14 @@ PrefabInstance:
     - target: {fileID: 2578966177156416992, guid: 2c1363c752ad32c4cab5415fdde4c7eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879099530026772744, guid: 2c1363c752ad32c4cab5415fdde4c7eb, type: 3}
+      propertyPath: m_Radius
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743033870318554430, guid: 2c1363c752ad32c4cab5415fdde4c7eb, type: 3}
+      propertyPath: minDistanceToDetect
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 8082478205674140372, guid: 2c1363c752ad32c4cab5415fdde4c7eb, type: 3}
       propertyPath: m_Name

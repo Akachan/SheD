@@ -112,23 +112,33 @@ namespace Audio
         
         public void SetPauseBgm()
         {
-           //poner la musica de pausa
            Debug.Log("SetPauseBgm");
            
-           
+           //todo: poner la musica de pausa
         }
 
         public void RemovePauseBgm()
         {
-            //volver a poner la música de gameplay
             Debug.Log("RemovePauseBgm");
+            
+            //todo: volver a poner la música de gameplay
         }
 
+        public void SetProximityRatio(float newRatio)
+        {
+            var ratio = newRatio;
+            
+            //esta linea hace que el 1 sea cuando el enemigo está super cerca y 0 cuando está fuera de rango
+            //Si querés invertirlo simplemente comentá esta linea :D
+            ratio = 1 - ratio;
+            
+            Debug.Log($"SetProximityRatio {ratio}");
+            
+            //todo: poner el BGM de proximidad
+            
+        }
 
-
-
-
-
+    
 
 
         // --- L�gica de FMOD ---
@@ -141,6 +151,7 @@ namespace Audio
                 RuntimeManager.PlayOneShot(soundEvent);
             }
         }
+
 
 
     }
