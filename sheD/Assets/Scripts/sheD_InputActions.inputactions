@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Eat",
+                    "type": "Button",
+                    "id": "c565fc6c-869a-4861-8dbc-3e53ea41992a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Look",
                     "type": "Value",
                     "id": "ed7aaf8f-f6af-48cf-9a8c-e50ae0678302",
@@ -33,9 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Eat",
+                    "name": "Escape",
                     "type": "Button",
-                    "id": "c565fc6c-869a-4861-8dbc-3e53ea41992a",
+                    "id": "593eb2d2-1c24-442c-9659-a891adbf3c54",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -273,6 +282,17 @@
                     "action": "Eat",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba0cdf35-5d36-491e-89e9-ed88de0aa101",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -366,6 +386,15 @@
                     "type": "PassThrough",
                     "id": "abddc639-76d7-4799-acd5-e5d768d5a49c",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "57db303e-1245-4ddc-ae30-44d718cbdd3d",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -787,6 +816,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf0ba6c6-6ab2-417c-8d50-20a901b1737e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

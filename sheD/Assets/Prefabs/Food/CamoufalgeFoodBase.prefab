@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7363916230975094783}
   - component: {fileID: 7181597736806162234}
   - component: {fileID: 3268857019440332593}
+  - component: {fileID: 4360977079893876871}
   m_Layer: 0
   m_Name: CamoufalgeFoodBase
   m_TagString: Camuflaje
@@ -133,4 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bfe70b58d143a46933ab4c6ecf03ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodType: 0
+  camouflageFoodType: 0
+--- !u!114 &4360977079893876871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543686113619871583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664b383d2823f0a4f9d70d828679c7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 1
