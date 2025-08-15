@@ -124,7 +124,7 @@ namespace Audio
             //todo: volver a poner la música de gameplay
         }
 
-        public void SetProximityRatio(float newRatio)
+        public void SetProximityBgm(float newRatio)
         {
             var ratio = newRatio;
             

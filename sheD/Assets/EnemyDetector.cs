@@ -42,7 +42,7 @@ public class EnemyDetector : MonoBehaviour
 
             if (_enemies.Count == 0)
             {
-                AudioManager.Instance.SetProximityRatio(1);
+                AudioManager.Instance.SetProximityBgm(1);
             }
         }
         
@@ -63,7 +63,7 @@ public class EnemyDetector : MonoBehaviour
         var ratio = CalculateRatio(enemyDistance);
 
         //pasar parámetro
-        AudioManager.Instance.SetProximityRatio(ratio);
+        AudioManager.Instance.SetProximityBgm(ratio);
         
     }
 
