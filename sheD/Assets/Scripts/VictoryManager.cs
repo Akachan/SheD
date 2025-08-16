@@ -54,6 +54,7 @@ public class VictoryManager : MonoBehaviour
       else
       {
          Debug.Log("No tienes suficiente material");
+         UiManager.Instance.SetMessage("No tienes suficiente material");
          //poner algun mensaje de que le falta cierto material
       }
    }

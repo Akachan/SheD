@@ -782,7 +782,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561931023}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -925,7 +925,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612942577}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1027,6 +1027,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &627707027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 468722450421752769, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+  m_PrefabInstance: {fileID: 1744593428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &659953671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8425124962155771093, guid: 7e3f99431afd99246b0acb106c80fe8f, type: 3}
@@ -1242,7 +1253,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859465238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1484,7 +1495,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110790723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2095,6 +2106,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 468722450421752769, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_text
+      value: Texto Ejemplo
+      objectReference: {fileID: 0}
+    - target: {fileID: 468722450421752769, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 905739828047654807, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2111,6 +2130,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1292534546665957085, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 627707027}
     - target: {fileID: 3358434718840240170, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2211,10 +2234,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5184825635694029817, guid: 755edba91d49efa4685ebb91f42d0707, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 035cc083bae25f24bbe58cc1665e5d9a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
