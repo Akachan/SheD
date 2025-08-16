@@ -6,7 +6,6 @@ Shader "Custom/SpriteReveal"
         _Color ("Tint", Color) = (1,1,1,1)
         _Fill ("Fill Amount", Range(0,1)) = 1
     }
-
     SubShader
     {
         Tags
@@ -17,38 +16,32 @@ Shader "Custom/SpriteReveal"
             "PreviewType"="Plane"
             "CanUseSpriteAtlas"="True"
         }
-
         Cull Off
         Lighting Off
         ZWrite Off
         Blend One OneMinusSrcAlpha
-
         Pass
         {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             #include "UnityCG.cginc"
-
             struct appdata_t
             {
                 float4 vertex : POSITION;
                 float4 color : COLOR;
                 float2 texcoord : TEXCOORD0;
             };
-
             struct v2f
             {
                 float4 vertex : SV_POSITION;
                 fixed4 color : COLOR;
                 half2 texcoord : TEXCOORD0;
             };
-
             fixed4 _Color;
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float _Fill;
-
             v2f vert(appdata_t IN)
             {
                 v2f OUT;
@@ -57,15 +50,12 @@ Shader "Custom/SpriteReveal"
                 OUT.color = IN.color * _Color;
                 return OUT;
             }
-
             fixed4 frag(v2f IN) : SV_Target
             {
                 fixed4 c = tex2D(_MainTex, IN.texcoord) * IN.color;
-
-                // Revela de izquierda a derecha según _Fill
-                if (IN.texcoord.x > _Fill)
+                // Revela de abajo hacia arriba según _Fill
+                if (IN.texcoord.y > _Fill)
                     discard;
-
                 return c;
             }
             ENDCG

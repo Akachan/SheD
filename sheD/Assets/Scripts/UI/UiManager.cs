@@ -10,9 +10,12 @@ public class UiManager : MonoBehaviour
 {
    [SerializeField] private GameObject gameOverPanel;
    [SerializeField] private GameObject winPanel;
+   
+   [Header("Pause Settings")]
    [SerializeField] private GameObject pausePanel;
    [SerializeField] private GameObject resumeButton;
-   
+
+   [SerializeField] private MessageSetter messagePanel;
    
    public static UiManager Instance { get; private set; }
    private  EventSystem _eventSystem;
@@ -41,8 +44,22 @@ public class UiManager : MonoBehaviour
    {
       winPanel.SetActive(true);
    }
+   public void EnablePausePanel()
+   {
+      pausePanel.SetActive(true);  
+      _eventSystem.SetSelectedGameObject(resumeButton);
+   }
+   public void DisablePausePanel()
+   {
+      pausePanel.SetActive(false); 
+   }
 
+   public void SetMessage(string message)
+   {
+      messagePanel.SetMessage(message);
+   }
 
+   //BUTTONS
    public void OnRestartButtonClick()
    {
       OnRemoveAction?.Invoke();
@@ -55,16 +72,8 @@ public class UiManager : MonoBehaviour
       SceneManager.LoadScene("MainMenu");
    }
 
-   public void EnablePausePanel()
-   {
-      pausePanel.SetActive(true);  
-      _eventSystem.SetSelectedGameObject(resumeButton);
-   }
 
-   public void DisablePausePanel()
-   {
-      pausePanel.SetActive(false); 
-   }
+
 
    public void OnToDesktopButton()
    {

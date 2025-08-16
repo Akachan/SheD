@@ -6,6 +6,7 @@ namespace Core
 {
     public class SpriteSorter : MonoBehaviour
     {
+        [SerializeReference] private Transform referencePoint;
         [SerializeField] private bool isStatic;
         private SpriteRenderer _sprite;
 
@@ -16,13 +17,13 @@ namespace Core
 
         private void Start()
         {
-            _sprite.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+            _sprite.sortingOrder = Mathf.RoundToInt(-referencePoint.position.y * 100);
         }
 
         void LateUpdate()
         {
            if(isStatic) return;
-           _sprite.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+           _sprite.sortingOrder = Mathf.RoundToInt(-referencePoint.position.y * 100);
         }
     }
 }
