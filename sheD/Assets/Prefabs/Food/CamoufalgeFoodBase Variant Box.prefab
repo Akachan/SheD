@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1543686113619871583, guid: e4bb280749e5995419c919332e6505d5, type: 3}
       propertyPath: m_Name
-      value: CamoufalgeFoodBase Variant
+      value: CamoufalgeFoodBase Variant Box
       objectReference: {fileID: 0}
     - target: {fileID: 3268857019440332593, guid: e4bb280749e5995419c919332e6505d5, type: 3}
       propertyPath: foodType
@@ -55,6 +55,10 @@ PrefabInstance:
     - target: {fileID: 5348976340451589917, guid: e4bb280749e5995419c919332e6505d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600369853004600565, guid: e4bb280749e5995419c919332e6505d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.85
       objectReference: {fileID: 0}
     - target: {fileID: 7363916230975094783, guid: e4bb280749e5995419c919332e6505d5, type: 3}
       propertyPath: m_Sprite
