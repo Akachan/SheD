@@ -14,7 +14,7 @@ namespace Audio
         [SerializeField] private EventReference mainMusicRef;
         private EventInstance _musicEventInstance;
 
-        private Player _player;
+        private Player.Player _player;
 
 
 
@@ -69,7 +69,7 @@ namespace Audio
             if (_player == null) return;
             
             int state = 0;
-            state = _player.IsCamuflaged ? 1 : 0;
+            state = _player.IsCamouflaged ? 1 : 0;
 
             // Cambia el valor del par�metro global
             
@@ -102,7 +102,7 @@ namespace Audio
 
         private void FindPlayerReference()
         {
-            _player = FindFirstObjectByType<Player>();
+            _player = FindFirstObjectByType<Player.Player>();
             if (_player == null)
             {
                 Debug.LogWarning("El jugador no ha sido encontrado en la escena");
@@ -132,10 +132,16 @@ namespace Audio
             //Si querés invertirlo simplemente comentá esta linea :D
             ratio = 1 - ratio;
             
-            Debug.Log($"SetProximityRatio {ratio}");
+           //Debug.Log($"SetProximityRatio {ratio}");
             
             //todo: poner el BGM de proximidad
             
+        }
+        
+        public void SetGameOverBgm()
+        {
+            Debug.Log($"GameOver BGM");
+            //todo: poner el BGM de cuando perdés
         }
 
     
@@ -153,6 +159,6 @@ namespace Audio
         }
 
 
-
+  
     }
 }

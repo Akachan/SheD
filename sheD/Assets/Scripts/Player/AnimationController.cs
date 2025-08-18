@@ -13,13 +13,13 @@ public class AnimationController : MonoBehaviour
     private static readonly int OnCapture = Animator.StringToHash("onCapture");
     private Animator _animatorController;
     private InputManager _input;
-    private Player _player;
+    private Player.Player _player;
 
     private void Awake()
     {
         _animatorController = GetComponent<Animator>();
         _input = GetComponentInParent<InputManager>();
-        _player = GetComponent<Player>();
+        _player = GetComponent<Player.Player>();
     }
     
     public void SetMovingState(bool state)
@@ -39,7 +39,7 @@ public class AnimationController : MonoBehaviour
 
     private void SetCamouflageState()
     {
-        _animatorController.SetBool(IsHiding, _player.IsCamuflaged);
+        _animatorController.SetBool(IsHiding, _player.IsCamouflaged);
     }
 
     public void SetHidingBlend(float value)

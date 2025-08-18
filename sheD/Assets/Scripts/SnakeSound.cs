@@ -21,7 +21,7 @@ public class SnakeSound : MonoBehaviour
     private InputManager _input;
     private EventInstance _hideEventInstance;
     private EventInstance _moveEventInstance;
-    private Player _player;
+    private Player.Player _player;
 
     public void EatSound()
     {
@@ -36,7 +36,7 @@ public class SnakeSound : MonoBehaviour
 
     private void Awake()
     {
-        _player = FindObjectOfType<Player>();
+        _player = FindObjectOfType<Player.Player>();
         _input = FindFirstObjectByType<InputManager>();
     }
 
@@ -73,7 +73,7 @@ public class SnakeSound : MonoBehaviour
     {
         //Verifico el estado del player
         int state = 0;
-        state = _player.IsCamuflaged ? 1 : 0;
+        state = _player.IsCamouflaged ? 1 : 0;
         //Aplico el parametro
         _hideEventInstance.setParameterByName("SnakeState", state);
 

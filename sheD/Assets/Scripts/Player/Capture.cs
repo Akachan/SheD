@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using Core;
 using Enemy;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class Capture : MonoBehaviour
 {
     private static readonly int OnStop = Animator.StringToHash("onStop");
     [SerializeField] private GameObject deadParticle;
-    private Player _player;
+    private Player.Player _player;
     private InputManager _input;
     private AnimationController _animationController;
     private bool _isDead = false;
@@ -18,7 +19,7 @@ public class Capture : MonoBehaviour
 
     private void Awake()
     {
-        _player = GetComponentInParent<Player>();
+        _player = GetComponentInParent<Player.Player>();
         _input = GetComponentInParent<InputManager>();
         _animationController = _player.GetComponentInChildren<AnimationController>();
     }
@@ -27,7 +28,7 @@ public class Capture : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if(_player.IsCamuflaged) {return;}
+            if(_player.IsCamouflaged) {return;}
 
             GameOver();
         }
@@ -35,8 +36,14 @@ public class Capture : MonoBehaviour
 
     private void GameOver()
     {
+        
+        
         if (_isDead) return;
         _isDead = true;
+        
+        //Cambio a música de GameOver
+        AudioManager.Instance.SetGameOverBgm();
+        
         //Desabilito controles
         _input.SetInputActive(false);
         
@@ -64,7 +71,8 @@ public class Capture : MonoBehaviour
         foreach (var lee in lees)
         {
             
-            lee.StopLee();
+            lee.StopLee(true);
+            print("lee detenido");
             lee.GetComponentInChildren<Animator>().SetTrigger(OnStop);
         }
         

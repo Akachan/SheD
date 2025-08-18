@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 public class Eat : MonoBehaviour
 {
-     [SerializeField]private Player player;
+     [SerializeField]private Player.Player player;
 
  
 
@@ -31,7 +31,7 @@ public class Eat : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         IFood food = other.gameObject.GetComponent<IFood>();
-        if (food != null && player.IsCamuflaged)
+        if (food != null && player.IsCamouflaged)
         {
             food.Vomit();
         }

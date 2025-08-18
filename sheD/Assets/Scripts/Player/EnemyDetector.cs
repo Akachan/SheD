@@ -17,7 +17,7 @@ public class EnemyDetector : MonoBehaviour
 
     private void Awake()
     {
-        _colliderRadius = GetComponent<CircleCollider2D>().radius*GetComponentInParent<Player>().transform.localScale.x;
+        _colliderRadius = GetComponent<CircleCollider2D>().radius*GetComponentInParent<Player.Player>().transform.localScale.x;
         _enemies = new List<Transform>();
     }
     
