@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
    private void MovePlayer()
    {
       Vector3 movement = new Vector3(_input.MovementValue.x, _input.MovementValue.y, 0) * LevelManager.Instance.PlayerSpeed;
-      transform.Translate(movement * Time.deltaTime, Space.World);
+      GetComponent<Rigidbody2D>().velocity = movement;
       
       FlipPlayerToViewDirection();
 
