@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
+using Core;
 using Food;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -50,6 +52,7 @@ public class VictoryManager : MonoBehaviour
       if (_isOpen)
       {
          StartCoroutine(LevelManager.Instance.EndGame(EndGameType.Win));
+         AudioManager.Instance.SetGameOverBgm();
       }
       else
       {

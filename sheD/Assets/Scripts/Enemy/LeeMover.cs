@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Core;
 using UnityEngine;
 using Random = System.Random;
 
@@ -7,9 +8,10 @@ namespace Enemy
 {
    public class LeeMover : MonoBehaviour
    {
-      [SerializeField] private GameObject lee;
+      [Header("Enemy Settings")]
+      [SerializeField] private float speed = 5f;
       [SerializeField] private GameObject[] path;
-
+      
       private int _indexPath = 0;
       private GameObject _currentPath;
       private List<Transform> _waypoints = null;
@@ -30,7 +32,6 @@ namespace Enemy
 
       private void Update()
       {
-         if (!lee.activeSelf) return;
          if (_isStopped) return;
          if (_waypoints == null)
          {
@@ -42,7 +43,7 @@ namespace Enemy
          LeeMove();
          SetLeeViewDirection();
 
-         if (lee.transform.position != _waypoints[_indexPath].position) return;
+         if (transform.position != _waypoints[_indexPath].position) return;
          _indexPath++;
                
          if (_indexPath == _waypoints.Count-1)
@@ -51,6 +52,10 @@ namespace Enemy
          }
       }
 
+      public void StopLee(bool state)
+      {
+         _isStopped = state;
+      }
       private void EndPath()
       {
          _indexPath = 0;
@@ -59,13 +64,13 @@ namespace Enemy
 
       private void LeeMove()
       {
-         lee.transform.position = Vector3.MoveTowards(lee.transform.position, _waypoints[_indexPath].position,
-            LevelManager.Instance.EnemySpeed * Time.deltaTime);
+         transform.position = Vector3.MoveTowards(transform.position, _waypoints[_indexPath].position,
+            speed * Time.deltaTime);
       }
 
       private void SetLeeViewDirection()
       {
-         var direction = (_waypoints[_indexPath].position -lee.transform.position ).normalized;
+         var direction = (_waypoints[_indexPath].position -transform.position ).normalized;
          _leeSprite.flipX = direction.x > 0;
       }
 
@@ -81,16 +86,8 @@ namespace Enemy
             _waypoints.Add(_currentPath.transform.GetChild(i));
          }
          _waypoints.Add(_currentPath.transform.GetChild(0));
-
-
-      
-         
-      
       }
 
-      public void StopLee()
-      {
-         _isStopped = true;
-      }
+
    }
 }

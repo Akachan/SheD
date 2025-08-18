@@ -14,7 +14,7 @@ namespace Audio
         [SerializeField] private EventReference mainMusicRef;
         private EventInstance _musicEventInstance;
 
-        private Player _player;
+        private Player.Player _player;
 
 
 
@@ -69,7 +69,7 @@ namespace Audio
             if (_player == null) return;
             
             int state = 0;
-            state = _player.IsCamuflaged ? 1 : 0;
+            state = _player.IsCamouflaged ? 1 : 0;
 
             // Cambia el valor del par�metro global
             
@@ -102,7 +102,7 @@ namespace Audio
 
         private void FindPlayerReference()
         {
-            _player = FindFirstObjectByType<Player>();
+            _player = FindFirstObjectByType<Player.Player>();
             if (_player == null)
             {
                 Debug.LogWarning("El jugador no ha sido encontrado en la escena");

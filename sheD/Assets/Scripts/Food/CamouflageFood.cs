@@ -9,12 +9,12 @@ public class CamouflageFood : MonoBehaviour, IFood
 {
     [SerializeField] private CamouflageFoodTypeName camouflageFoodType;
     private InputManager _input;
-    private Player _player;
+    private Player.Player _player;
 
     private void Awake()
     {
         _input = FindFirstObjectByType<InputManager>();
-        _player = FindFirstObjectByType<Player>();
+        _player = FindFirstObjectByType<Player.Player>();
     }
 
     //Si el player entra en contacto con una comida que otorga camuflaje, agrega la acción "Camouflage" al Botón E
