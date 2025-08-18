@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using Core;
 using Enemy;
 using UnityEngine;
@@ -35,8 +36,14 @@ public class Capture : MonoBehaviour
 
     private void GameOver()
     {
+        
+        
         if (_isDead) return;
         _isDead = true;
+        
+        //Cambio a música de GameOver
+        AudioManager.Instance.SetGameOverBgm();
+        
         //Desabilito controles
         _input.SetInputActive(false);
         

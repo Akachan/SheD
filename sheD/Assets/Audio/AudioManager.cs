@@ -132,10 +132,16 @@ namespace Audio
             //Si querés invertirlo simplemente comentá esta linea :D
             ratio = 1 - ratio;
             
-            Debug.Log($"SetProximityRatio {ratio}");
+           //Debug.Log($"SetProximityRatio {ratio}");
             
             //todo: poner el BGM de proximidad
             
+        }
+        
+        public void SetGameOverBgm()
+        {
+            Debug.Log($"GameOver BGM");
+            //todo: poner el BGM de cuando perdés
         }
 
     
@@ -153,6 +159,6 @@ namespace Audio
         }
 
 
-
+  
     }
 }

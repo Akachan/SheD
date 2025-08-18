@@ -3024,6 +3024,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 505499265870717476, guid: c326e07528eb3aa4798280a979d091dd, type: 3}
+      propertyPath: m_PathPosition
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1324596788628760893, guid: c326e07528eb3aa4798280a979d091dd, type: 3}
       propertyPath: m_Name
       value: Camaras
@@ -3082,7 +3086,7 @@ PrefabInstance:
       objectReference: {fileID: 1534588865}
     - target: {fileID: 9169436569826534478, guid: c326e07528eb3aa4798280a979d091dd, type: 3}
       propertyPath: m_ChildCameras.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
