@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 5077253840445129325}
   - component: {fileID: 692006285528824125}
   - component: {fileID: 3873598804862279863}
+  - component: {fileID: 2767497148093323824}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -61,7 +62,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2717342994364458052}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.91, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -221,3 +222,22 @@ MonoBehaviour:
   path:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &2767497148093323824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717342994364458052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474abb6acee7b9149989f5d5558eb0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepSfx:
+    Guid:
+      Data1: -1837873564
+      Data2: 1283471188
+      Data3: 1690816156
+      Data4: 189967730
+    Path: event:/SFX/Characters/Enemies/Footsteps
