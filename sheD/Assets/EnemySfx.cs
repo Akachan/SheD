@@ -10,7 +10,7 @@ public class EnemySfx : MonoBehaviour
     private Player.Player _player;
     public void StepSfx()
     {
-        RuntimeManager.PlayOneShotAttached(footstepSfx,gameObject );
+        RuntimeManager.PlayOneShotAttached(footstepSfx, gameObject);
         //print("STEP");
     }
 

@@ -20,10 +20,13 @@ public class CamouflageFood : MonoBehaviour, IFood
     //Si el player entra en contacto con una comida que otorga camuflaje, agrega la acción "Camouflage" al Botón E
     public void Eat()
     {
+        ShowMessage();
         _input.OnEatEvent += Camouflage;
     }
 
     
+
+
     //Si el player sale del contacto con una comida que otorga camuflaje, retira la acción "Camouflage" del Botón E
     public void Vomit()
     {
@@ -42,6 +45,10 @@ public class CamouflageFood : MonoBehaviour, IFood
         _player.SetCamouflage(camouflageFoodType);
         
 
+    }
+    private void ShowMessage()
+    {
+        UiManager.Instance.SetMessage("Press E to camouflage");
     }
     
 

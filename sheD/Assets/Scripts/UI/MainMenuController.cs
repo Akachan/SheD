@@ -12,7 +12,7 @@ public class MainMenuController : MonoBehaviour
 
     public void OnStartButtonClick()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("Level1");
     }
 
     public void OnHowToPlayButtonClick()

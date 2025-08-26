@@ -73,6 +73,12 @@ public class UiManager : MonoBehaviour
       SceneManager.LoadScene("MainMenu");
    }
 
+   public void OnNextLevelButtonClick()
+   {
+      OnRemoveAction?.Invoke();
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      
+   }
 
 
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7181597736806162234}
   - component: {fileID: 3268857019440332593}
   - component: {fileID: 4360977079893876871}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CamoufalgeFoodBase
   m_TagString: Camuflaje
   m_Icon: {fileID: 0}
