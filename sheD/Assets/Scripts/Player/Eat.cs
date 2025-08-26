@@ -20,21 +20,23 @@ public class Eat : MonoBehaviour
         IFood food = other.gameObject.GetComponent<IFood>();
         if (food != null)
         {
+            print("enterCollider");
             food.Eat();
         }
-        //todo: MOVER ESTO A UN NUEVO SCRIPT CON IFood DE Interfaz
-        //EatCommonFood(other);
+        
+        
         
     }
-    
-    
     private void OnTriggerExit2D(Collider2D other)
     {
+        print("exit?");
         IFood food = other.gameObject.GetComponent<IFood>();
-        if (food != null && player.IsCamouflaged)
+        if (food != null)
         {
+            print("exitCollider");
             food.Vomit();
         }
+       
     }
     
     

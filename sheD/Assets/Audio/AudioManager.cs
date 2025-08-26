@@ -11,6 +11,8 @@ namespace Audio
         // La instancia est�tica p�blica que ser� accesible desde cualquier otro script.
         public static AudioManager Instance { get; private set; }
 
+        private StudioEventEmitter _emitter;
+        
         [SerializeField] private EventReference mainMusicRef;
         private EventInstance _musicEventInstance;
 
@@ -31,6 +33,7 @@ namespace Audio
         {
             Singleton();
             FindPlayerReference();
+            _emitter = GetComponent<StudioEventEmitter>();
 
            
         }
@@ -107,6 +110,10 @@ namespace Audio
             {
                 Debug.LogWarning("El jugador no ha sido encontrado en la escena");
             }
+            else
+            {
+                Debug.Log("El jugador ha sido encontrado en la escena");
+            }
 
         }
         
@@ -114,14 +121,14 @@ namespace Audio
         {
            Debug.Log("SetPauseBgm");
            
-           //todo: poner la musica de pausa
+           SetGlobalParameter(2);
         }
 
         public void RemovePauseBgm()
         {
             Debug.Log("RemovePauseBgm");
             
-            //todo: volver a poner la música de gameplay
+           SetGlobalParameter(1);
         }
 
         public void SetProximityBgm(float newRatio)
@@ -132,16 +139,14 @@ namespace Audio
             //Si querés invertirlo simplemente comentá esta linea :D
             ratio = 1 - ratio;
             
-           //Debug.Log($"SetProximityRatio {ratio}");
-            
-            //todo: poner el BGM de proximidad
-            
+            _emitter.SetParameter("EnemieProximity", ratio);
         }
         
         public void SetGameOverBgm()
         {
             Debug.Log($"GameOver BGM");
-            //todo: poner el BGM de cuando perdés
+            
+            SetGlobalParameter(3);
         }
 
     
